@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Tracking System</title>
+    <link rel="stylesheet" href="stylehomepage.css">
+</head>
+<body>
+    <header>
+        
+        <div class="container">
+            <img src="./logo.png" alt="Logo" class="logo">
+            
+            <h1>Issue Tracking System</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="login.html">Login</a></li> <!-- Link to Login Page -->
+                </ul>
+            </nav>
+        </div>
+        
+    </header>
+    <div class="image-container" style="position: relative;">
+        <img src="./img.png" alt="handshake img" class="transparent-image" height="500px" width="1260px">
+        <div class="overlay-content">
+            <h2>Welcome to the Issue Tracking System</h2>
+            <p>Your Efficient Solution for Managing Issues and Tracking Progress.</p>
+        </div>
+        
+
+    </div>
+    <section id="home" class="home-section">
+        
+        <div class="ad-container ad-left">
+            <!-- Add your advertisement content or image here -->
+            <img src="./logo2.png" alt="Left Ad" class="ad-img">
+        </div>
+        <div class="image-container">
+            <img src="./background1.png" alt="Description of Image" class="background-image">
+            <div class="overlay-text">Welcome to Issue Tracking System</div>
+        </div>
+        <div class="ad-container ad-right">
+            <!-- Add your advertisement content or image here -->
+            <img src="./logo.png" alt="Right Ad" class="ad-img">
+        </div>
+        <div class="container">
+            <p>This system allows you to efficiently track and manage issues within your projects.</p>
+            <p>Our features include ticket creation, search and update functionalities, priority setting, and developer assignments.</p>
+            <a href="#features" class="btn">Learn More</a>
+        </div>
+    </section>
+    <section id="features">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="search-bar">
+                <input type="text" id="searchInput" onkeyup="searchFeatures()" placeholder="Search for features...">
+            </div>
+            <div class="slider-container">
+                <button class="nav-btn prev" onclick="scrollSlider(-1)">&#10094;</button>
+                <div class="slider" id="featureSlider">
+                    <div class="feature">
+                        <h3>Developer Accounts</h3>
+                        <p>Manage individual accounts for each developer. Ensure developers have access to the right tools and resources. Track their contributions and monitor their activity logs to ensure accountability and transparency.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Ticket Management</h3>
+                        <p>Create, update, and search for tickets with ease. Our system allows detailed ticket descriptions, tagging, and categorization to streamline issue tracking and resolution.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Priority Setting</h3>
+                        <p>Set priorities for tickets to ensure critical issues are addressed first. Customize priority levels to match your workflow needs and ensure that the most important tasks are highlighted and resolved promptly.</p>
+                    </div>
+                    <div class=" feature">
+                        <h3>Assign/Unassign Tickets</h3>
+                        <p>Assign tickets to developers or allow them to self-assign. This feature helps in balancing the workload among team members and ensures that issues are addressed by the right personnel.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>File Uploads</h3>
+                        <p>Upload patches or other required files when resolving issues. This enables easy sharing of resources and documents needed to troubleshoot and fix issues, ensuring everyone has the latest information.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Activity Log</h3>
+                        <p>Maintain a history of ticket activities, including comments and updates. This comprehensive log helps track progress and decisions made, providing a clear audit trail for each issue.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Customizable Workflows</h3>
+                        <p>Define and customize workflows to match your team's processes. Ensure that tickets move through the correct stages from creation to resolution, with clearly defined steps and responsibilities.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Real-time Notifications</h3>
+                        <p>Receive real-time notifications for ticket updates, comments, and assignments. Stay informed about the status of your issues and ensure timely responses and resolutions.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Analytics and Reporting</h3>
+                        <p>Generate detailed reports and analytics to understand trends, performance, and bottlenecks. Use this data to make informed decisions and improve your issue management process.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Integration with Third-party Tools</h3>
+                        <p>Integrate with popular third-party tools such as Slack, GitHub, and JIRA. Enhance your workflow by connecting our issue tracking system with other tools you use daily.</p>
+                    </div>
+                </div>
+                <button class="nav-btn next" onclick="scrollSlider(1)">&#10095;</button>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>For any inquiries, please contact us at <a href="mailto:support@issuetracker.com">support@issuetracker.com</a>.</p>
+        </div>
+    </section>
+    <section>
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2024 Issue Tracking System. All rights reserved.</p>
+        </div>
+        
+    </section>
+    <script>
+        function scrollSlider(direction) {
+            const slider = document.querySelector('.slider');
+            const scrollAmount = slider.scrollWidth / slider.children.length;
+            slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+
+        function searchFeatures() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const features = document.getElementById('featureSlider').getElementsByClassName('feature');
+
+            for (let i = 0; i < features.length; i++) {
+                const feature = features[i];
+                const text = feature.textContent || feature.innerText;
+                if (text.toLowerCase().indexOf(filter) > -1) {
+                    feature.style.display = "";
+                } else {
+                    feature.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Tracking System</title>
+    <link rel="stylesheet" href="carouseles.css">
+</head>
+<body>
+    <header>
+        <h1>Issue Tracking System</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#create-ticket">Create Ticket</a></li>
+            <li><a href="#search-tickets">Search Tickets</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="dashboard">
+            <h2>Dashboard</h2>
+            <div id="ticket-carousel" class="carousel">
+                <div class="carousel-item">Ticket 1</div>
+                <div class="carousel-item">Ticket 2</div>
+                <div class="carousel-item">Ticket 3</div>
+            </div>
+        </section>
+        <section id="create-ticket">
+            <h2>Create Ticket</h2>
+            <form id="ticket-form">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+                <label for="priority">Priority:</label>
+                <select id="priority" name="priority">
+                    <option value="1">High</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Low</option>
+                </select>
+                <button type="submit">Create Ticket</button>
+            </form>
+        </section>
+        <section id="search-tickets">
+            <h2>Search Tickets</h2>
+            <input type="text" id="search" placeholder="Search for tickets...">
+            <div id="search-results"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Issue Tracking System</p>
+    </footer>
+    <script src="corouseles.js"></script>
+</body>
+</html>
